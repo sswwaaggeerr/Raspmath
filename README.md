@@ -31,52 +31,52 @@
 ## 🚀 Быстрый старт
 
 ### 1. Клонируй репозиторий
-bash
-git clone https://github.com/sswwaaggeerr/Raspmath.git
-cd Raspmath
+- bash
+- git clone https://github.com/sswwaaggeerr/Raspmath.git
+- cd Raspmath
 
 ## 2. Создай виртуальное окружение и установи зависимости
-bash
-python -m venv venv
-source venv/bin/activate      # Linux/macOS
-venv\Scripts\activate         # Windows
-pip install -r requirements.txt
+- bash
+- python -m venv venv
+- source venv/bin/activate      # Linux/macOS
+- venv\Scripts\activate         # Windows
+- pip install -r requirements.txt
 
 ## 3. Настрой MySQL
 Создай базу данных и пользователя:
 
-sql
-CREATE DATABASE isu_bot CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-CREATE USER 'isu_bot'@'localhost' IDENTIFIED BY 'твой_пароль';
-GRANT ALL PRIVILEGES ON isu_bot.* TO 'isu_bot'@'localhost';
-FLUSH PRIVILEGES;
+- sql
+- CREATE DATABASE isu_bot CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+- CREATE USER 'isu_bot'@'localhost' IDENTIFIED BY 'твой_пароль';
+- GRANT ALL PRIVILEGES ON isu_bot.* TO 'isu_bot'@'localhost';
+- FLUSH PRIVILEGES;
 
 ## 4. Создай файл .env
 Скопируй содержимое из .env.example (или создай вручную) и заполни своими данными:
 
-ini
-BOT_TOKEN=1234567890:ABCdefGHIjklMNOpqrsTUVwxyz
-ADMIN_USER_ID=123456789
+- ini
+- BOT_TOKEN=1234567890:ABCdefGHIjklMNOpqrsTUVwxyz
+- ADMIN_USER_ID=123456789
 
-DB_HOST=localhost
-DB_PORT=3306
-DB_USER=isu_bot
-DB_PASSWORD=твой_пароль
-DB_NAME=isu_bot
+- DB_HOST=localhost
+- DB_PORT=3306
+- DB_USER=isu_bot
+- DB_PASSWORD=твой_пароль
+- DB_NAME=isu_bot
 
 ## 5. Запусти бота
-bash
-python main.py
-После первого запуска бот автоматически создаст все необходимые таблицы в базе данных.
+- bash
+- python main.py
+- После первого запуска бот автоматически создаст все необходимые таблицы в базе данных.
 
 ## 📦 Структура проекта
-Файл	Назначение
-main.py	Точка входа, инициализация бота, обработчики сообщений, FSM
-database.py	Работа с MySQL (пул соединений), хранилища UserSettingsStore, MySQLStorage, ScheduleCacheStore
-schedule_raspmath.py	Парсинг страницы /schedule/ и запросов к /fillSchedule
-requirements.txt	Зависимости Python
-.env.example	Пример конфигурационного файла
-.gitignore	Исключение секретных и временных файлов из Git
+- Файл	Назначение
+- main.py	Точка входа, инициализация бота, обработчики сообщений, FSM
+- database.py	Работа с MySQL (пул соединений), хранилища UserSettingsStore, MySQLStorage, ScheduleCacheStore
+- schedule_raspmath.py	Парсинг страницы /schedule/ и запросов к /fillSchedule
+- requirements.txt	Зависимости Python
+- .env.example	Пример конфигурационного файла
+- .gitignore	Исключение секретных и временных файлов из Git
 
 ## 🛠 Используемые технологии
 Aiogram 3.x — асинхронный фреймворк для Telegram Bot API.
