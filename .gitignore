@@ -1,0 +1,10 @@
+.env
+*.pyc
+__pycache__/
+venv/
+.idea/
+*.log
+telegram_ids.txt
+*.db
+*.sqlite
+.DS_Store
